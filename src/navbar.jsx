@@ -1,14 +1,16 @@
 import React from "react";
-import { NavLink } from "react-router-dom"; // Use NavLink for active styling
+import { useNavigate } from "react-router-dom";
 
 const NavBar = () => {
+  const navigate = useNavigate();
+
   return (
     <>
+      {/* Styles specific to the Navbar's interactive elements */}
       <style>{`
-        /* Hover effects for nav links */
         .nav-link {
           position: relative;
-          text-decoration: none; /* Ensure NavLink doesn't have default underline */
+          cursor: pointer; /* Added for better UX on the clickable links */
         }
         .nav-link::after {
           content: '';
@@ -21,14 +23,10 @@ const NavBar = () => {
           background-color: #00A8FF;
           transition: width 0.3s ease-in-out;
         }
-        .nav-link:hover::after, .nav-link.active::after {
-          width: 100%; /* Underline on hover AND when active */
-        }
-        .nav-link.active {
-          color: #FFFFFF; /* Make active link white */
+        .nav-link:hover::after {
+          width: 100%;
         }
 
-        /* Button hover effects */
         .login-button:hover {
           background-color: rgba(0, 168, 255, 0.2);
         }
@@ -39,23 +37,43 @@ const NavBar = () => {
       `}</style>
 
       <header style={styles.header}>
-        <NavLink to="/" style={styles.logoLink}>
-          <div style={styles.logo}>AUTOMECH</div>
-        </NavLink>
+        <div style={styles.logo}>
+          <span
+            onClick={() => navigate("/")}
+            style={{ cursor: "pointer" }} // makes it look clickable
+          >
+            AUTOMECH
+          </span>
+        </div>
         <nav style={styles.nav}>
-          <NavLink to="/services" className="nav-link" style={styles.navLink}>
+          <a
+            className="nav-link"
+            style={styles.navLink}
+            onClick={() => navigate("/services")}
+          >
             Services
-          </NavLink>
-          {/* These can be updated to real routes later */}
-          <NavLink to="/explore" className="nav-link" style={styles.navLink}>
+          </a>
+          <a
+            className="nav-link"
+            style={styles.navLink}
+            onClick={() => navigate("/explore")} // Example navigation
+          >
             Explore Us
-          </NavLink>
-          <NavLink to="/booking" className="nav-link" style={styles.navLink}>
+          </a>
+          <a
+            className="nav-link"
+            style={styles.navLink}
+            onClick={() => navigate("/booking")} // Example navigation
+          >
             Book Service
-          </NavLink>
-          <NavLink to="/clients" className="nav-link" style={styles.navLink}>
+          </a>
+          <a
+            className="nav-link"
+            style={styles.navLink}
+            onClick={() => navigate("/clients")} // Example navigation
+          >
             Meet Clients
-          </NavLink>
+          </a>
         </nav>
         <div style={styles.authButtons}>
           <button
@@ -76,7 +94,7 @@ const NavBar = () => {
   );
 };
 
-// --- STYLES FOR NAVBAR ---
+// Styles specific to the NavBar component
 const styles = {
   header: {
     display: "flex",
@@ -90,12 +108,8 @@ const styles = {
     position: "fixed",
     top: 0,
     left: 0,
-    zIndex: 1000,
+    zIndex: 100,
     boxSizing: "border-box",
-  },
-  logoLink: {
-    textDecoration: "none",
-    color: "inherit",
   },
   logo: {
     fontSize: "2rem",
@@ -109,6 +123,7 @@ const styles = {
     gap: "50px",
   },
   navLink: {
+    textDecoration: "none",
     color: "#E0E0E0",
     fontSize: "1rem",
     fontWeight: "600",

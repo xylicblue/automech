@@ -1,6 +1,7 @@
 import React from "react";
 import BackgroundWrapper from "./background";
 import { useNavigate } from "react-router-dom";
+import NavBar from "./navbar";
 
 // Data for our scrolling stats bar
 const statsData = [
@@ -64,6 +65,7 @@ const Dashboard = () => {
         </div>
 
         <div style={styles.pageContainer}>
+          <NavBar />
           <header style={styles.header}>
             <div style={styles.logo}>AUTOMECH</div>
             <nav style={styles.nav}>

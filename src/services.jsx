@@ -1,54 +1,54 @@
 import React, { useState, useEffect, useRef } from "react";
 import BackgroundWrapper from "./background"; // Reuse your cool background
-
+import NavBar from "./navbar";
+import engine from "./assets/engine.jpg";
+import oil from "./assets/oil.jpg";
+import brake from "./assets/brake.jpg";
+import wheel from "./assets/wheel.jpg";
+import tuning from "./assets/tuning.jpg";
+import detailing from "./assets/detailing.avif";
 const servicesData = [
   {
     id: 1,
     name: "Engine Diagnostics",
     description:
       "Advanced computer diagnostics to pinpoint issues with precision.",
-    imageUrl:
-      "https://images.unsplash.com/photo-1620714229341-2f2c8a2f3b9e?q=80&w=1932&auto=format&fit=crop",
+    imageUrl: engine,
   },
   {
     id: 2,
     name: "Oil & Filter Change",
     description:
       "Premium synthetic oils and high-quality filters for peak performance.",
-    imageUrl:
-      "https://images.unsplash.com/photo-1629836938739-16a2b89ac222?q=80&w=1770&auto=format&fit=crop",
+    imageUrl: oil,
   },
   {
     id: 3,
     name: "Brake Services",
     description:
       "Comprehensive brake inspection, repair, and replacement services.",
-    imageUrl:
-      "https://images.unsplash.com/photo-1581456485834-3367c3143d42?q=80&w=1770&auto=format&fit=crop",
+    imageUrl: brake,
   },
   {
     id: 4,
     name: "Tire & Wheel Alignment",
     description:
       "State-of-the-art laser alignment for improved handling and tire life.",
-    imageUrl:
-      "https://images.unsplash.com/photo-1607598254426-9d3a5add33b5?q=80&w=1770&auto=format&fit=crop",
+    imageUrl: wheel,
   },
   {
     id: 5,
     name: "Performance Tuning",
     description:
       "ECU remapping and performance upgrades to unlock your car’s potential.",
-    imageUrl:
-      "https://images.unsplash.com/photo-1553523826-b51381b49e2a?q=80&w=1931&auto=format&fit=crop",
+    imageUrl: tuning,
   },
   {
     id: 6,
     name: "Full Detailing",
     description:
       "Meticulous interior and exterior cleaning for a showroom finish.",
-    imageUrl:
-      "https://images.unsplash.com/photo-1607956554116-b15de423e13d?q=80&w=1770&auto=format&fit=crop",
+    imageUrl: detailing,
   },
 ];
 
@@ -139,6 +139,7 @@ const ServicesPage = () => {
             `}</style>
       <BackgroundWrapper>
         <div style={styles.pageContainer}>
+          <NavBar />
           <h1 style={styles.pageTitle}>Our Expertise. Your Advantage.</h1>
           <p style={styles.pageSubtitle}>
             We offer a comprehensive range of services, all performed by
