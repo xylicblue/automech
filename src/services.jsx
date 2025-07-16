@@ -7,6 +7,7 @@ import brake from "./assets/brake.jpg";
 import wheel from "./assets/wheel.jpg";
 import tuning from "./assets/tuning.jpg";
 import detailing from "./assets/detailing.avif";
+import Footer from "./footer";
 const servicesData = [
   {
     id: 1,
@@ -155,6 +156,7 @@ const ServicesPage = () => {
             ))}
           </div>
         </div>
+        <Footer />
       </BackgroundWrapper>
     </>
   );
