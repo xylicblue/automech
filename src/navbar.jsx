@@ -223,12 +223,24 @@ const NavBar = () => {
                     </span>
                   </div>
                 </div>
+
                 <ProfileModal
                   userProfile={userProfile}
                   isOpen={isModalOpen}
                   onNavigate={() => navigate("/edit-profile")}
                 />
               </div>
+              <button
+                onClick={() => navigate("/invoice-generator")}
+                className="invoice-button" // You can add specific hover styles for this class
+                style={{
+                  ...styles.authButton,
+                  backgroundColor: "#6f42c1",
+                  borderColor: "#6f42c1",
+                }}
+              >
+                Invoice Generator
+              </button>
               <button
                 onClick={handleLogout}
                 className="logout-button"

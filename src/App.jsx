@@ -11,6 +11,9 @@ import MyBookings from "./mybook";
 import ExplorePage from "./explore";
 // --- IMPORT THE NEW WRAPPER ---
 import ProtectedRoute from "./protected";
+import InvoiceGenerator from "./invoice";
+import ConversationsPage from "./conversation";
+import MeetClientsPage from "./clients";
 
 function App() {
   return (
@@ -52,6 +55,30 @@ function App() {
           element={
             <ProtectedRoute adminOnly={true}>
               <BookingRequests />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/invoice-generator"
+          element={
+            <ProtectedRoute adminOnly={true}>
+              <InvoiceGenerator />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/messages"
+          element={
+            <ProtectedRoute>
+              <ConversationsPage />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/clients"
+          element={
+            <ProtectedRoute>
+              <MeetClientsPage />
             </ProtectedRoute>
           }
         />

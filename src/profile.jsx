@@ -2,6 +2,9 @@ import React, { useState, useEffect, useRef } from "react";
 import { useNavigate } from "react-router-dom";
 import { supabase } from "./supabase";
 import BackgroundWrapper from "./background";
+import NavBar from "./navbar";
+import LoadingSpinner from "./loading";
+import { FaCar } from "react-icons/fa";
 
 // --- ICONS ---
 const UserIcon = () => (
@@ -224,16 +227,13 @@ const EditProfile = () => {
 
   // Show a loading screen while fetching initial data
   if (loading && !profile) {
-    return (
-      <BackgroundWrapper>
-        <div style={styles.loading}>Loading Profile...</div>
-      </BackgroundWrapper>
-    );
+    return <LoadingSpinner text="Loading Profile"></LoadingSpinner>;
   }
 
   return (
     <BackgroundWrapper>
       <div style={styles.pageContainer}>
+        <NavBar></NavBar>
         <div style={styles.card}>
           <h1 style={styles.title}>Edit Your Profile</h1>
           <p style={styles.subtitle}>Keep your workshop details up to date.</p>
@@ -308,7 +308,7 @@ const EditProfile = () => {
               <label style={styles.label}>Vehicle Type</label>
               <div style={styles.inputWrapper}>
                 <span style={styles.inputIcon}>
-                  <CarIcon />
+                  <FaCar />
                 </span>
                 <input
                   type="text"
@@ -384,6 +384,7 @@ const styles = {
     padding: "40px 50px",
     color: "#fff",
     boxShadow: "0 10px 40px rgba(0, 0, 0, 0.4)",
+    marginTop: "50px",
   },
   title: {
     textAlign: "center",

@@ -62,7 +62,7 @@ const Footer = () => {
           </p>
           <div style={styles.socialIcons}>
             <a
-              href="https://instagram.com"
+              href="https://www.instagram.com/automechworkshop/"
               target="_blank"
               rel="noopener noreferrer"
               style={styles.socialLink}
@@ -70,7 +70,7 @@ const Footer = () => {
               <InstagramIcon />
             </a>
             <a
-              href="https://facebook.com"
+              href="https://www.facebook.com/automechworkshop"
               target="_blank"
               rel="noopener noreferrer"
               style={styles.socialLink}
@@ -78,7 +78,7 @@ const Footer = () => {
               <FacebookIcon />
             </a>
             <a
-              href="https://wa.me/1234567890"
+              href="https://wa.me/+923004292156"
               target="_blank"
               rel="noopener noreferrer"
               style={styles.socialLink}
@@ -108,15 +108,15 @@ const Footer = () => {
         {/* Column 3: Contact Info */}
         <div style={styles.footerColumn}>
           <h3 style={styles.columnTitle}>Contact Us</h3>
-          <p style={styles.contactInfo}>123 Auto Drive, Mech City, 45678</p>
+          <p style={styles.contactInfo}>570 - Q, JOHAR TOWN , LAHORE, 54000</p>
           <p style={styles.contactInfo}>
             <a href="mailto:contact@automech.com" style={styles.footerLink}>
               contact@automech.com
             </a>
           </p>
           <p style={styles.contactInfo}>
-            <a href="tel:+1234567890" style={styles.footerLink}>
-              +1 (234) 567-890
+            <a href="tel:+923004292156" style={styles.footerLink}>
+              +92 (300) 4292-156
             </a>
           </p>
         </div>
@@ -139,7 +139,7 @@ const styles = {
     color: "#E0E0E0",
     fontFamily: "'Inter', sans-serif",
     boxSizing: "border-box",
-    marginTop: "auto", // Pushes footer to the bottom in a flex column layout
+    marginTop: "70px", // Pushes footer to the bottom in a flex column layout
   },
   footerContent: {
     display: "flex",

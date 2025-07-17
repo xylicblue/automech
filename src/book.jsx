@@ -272,6 +272,7 @@ const styles = {
     borderRadius: "24px",
     padding: "40px 50px",
     boxShadow: "0 10px 40px rgba(0, 0, 0, 0.4)",
+    marginTop: "60px",
   },
   title: {
     textAlign: "center",
