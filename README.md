@@ -81,5 +81,5 @@ This is a **full-stack automobile workshop maintenance platform** that allows cl
 
 ### **1. Clone the repository**
 ```bash
-git clone <your-repo-url>
-cd <repo-name>
+git clone https://github.com/xylicblue/automech
+cd automech
